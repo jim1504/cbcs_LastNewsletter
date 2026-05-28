@@ -1,0 +1,222 @@
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /*font-size: 26px;*/
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #333;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, color;
+}
+#back-to-top-btn:hover, #back-to-top-btn:focus {
+  background-color: #333;
+  color: #fff;  
+}
+
+/* Animations */
+.btnEntrance {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: btnEntrance;
+}
+
+/* fadeInUp */
+@keyframes btnEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btnExit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;  
+  animation-name: btnExit;
+}
+
+/* fadeOutDown */
+@keyframes btnExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+
+
+/* LANGUAGE SECTION */
+
+
+/* Language selector styles */
+.language-selector {
+    margin: 0;
+    display: flex;
+    justify-content: right;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 100px; /* button width only */
+}
+
+/* Toggle button */
+.dropdown-toggle {
+    background-color: #d8e0e9;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 3px 3px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+	text-align: left;
+    justify-content: space-between;
+    cursor: pointer;
+	font-family: 'Lora', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #e9ecef;
+    border-color: #3498db;
+}
+
+.dropdown-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.dropdown-toggle .arrow {
+    font-family: 'Lora', Arial, Helvetica, sans-serif;
+	font-size: 8px;
+    color: #7f8c8d;
+    transition: transform 0.3s;
+	padding: 0px 0px 0px 5px;
+}
+
+.dropdown.open .arrow {
+    transform: scaleY(-1);
+}
+
+/* Flags */
+.flag-icon {
+    width: 16px;
+    height: 11px;
+    border-radius: 2px;
+    object-fit: cover;
+	padding: 0px 5px 0px 5px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: -5%;
+    width: auto;
+    min-width: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Language options */
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #2c3e50;
+    border-bottom: 1px solid #f1f1f1;
+    transition: all 0.2s ease;
+}
+
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option span {
+    white-space: nowrap;
+}
+
+.lang-option:hover {
+    background-color: #f8f9fa;
+    color: #3498db;
+}
+
+.lang-option.active {
+    background-color: #e3f2fd;
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* FORCE language text visibility (override global styles) */
+.lang-option span {
+    display: inline-block !important;
+	font-family: 'Lora', Arial, Helvetica, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #2c3e50 !important;
+    text-indent: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    white-space: nowrap !important;
+}
+
+
+
+/* ROUND CHECK list ul li */
+
+.roundcheck-list {
+    list-style: none;        /* remove default bullets */
+    padding-left: 0;
+}
+
+.roundcheck-list li {
+    position: relative;
+    padding-left: 1.4rem;      /* space for the custom bullet */
+    margin-bottom: 0.2rem !important;
+}
+
+.roundcheck-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.15rem;             /* adjust vertical alignment */
+    width: 0.9rem;           /* size of the bullet */
+    height: 0.9rem;
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 11.3497L10.5 15.3497L16.5 9.34998" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
